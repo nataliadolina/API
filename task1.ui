@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1000</width>
-    <height>856</height>
+    <height>1019</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -74,7 +74,7 @@
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>210</y>
+      <y>280</y>
       <width>761</width>
       <height>541</height>
      </rect>
@@ -83,7 +83,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="show">
+   <widget class="QPushButton" name="sh">
     <property name="geometry">
      <rect>
       <x>640</x>
@@ -99,6 +99,19 @@
     </property>
     <property name="text">
      <string>show on map</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="res">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>890</y>
+      <width>701</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>
