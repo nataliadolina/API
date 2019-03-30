@@ -2,7 +2,7 @@ import sys
 from PyQt5 import uic
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QMainWindow, QApplication
-from django.contrib.sites import requests
+import requests
 
 
 class MyWidget(QMainWindow):
@@ -31,7 +31,7 @@ class MyWidget(QMainWindow):
                 file.write(self.response.content)
         except IOError as ex:
             self.res.setText('Object is not found')
-        pixm = QPixmap(file)
+        pixm = QPixmap('map.png')
         return pixm
 
 
