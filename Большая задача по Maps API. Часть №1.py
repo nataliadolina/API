@@ -1,5 +1,6 @@
 import sys
 from PyQt5 import uic
+from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QMainWindow, QApplication
 import requests
@@ -23,16 +24,23 @@ class MyWidget(QMainWindow):
         self.up.clicked.connect(self.upp)
         self.down.clicked.connect(self.downn)
 
+    def keyPressEvent(self, e):
+        if e.key() == Qt.Key_Up:
+            self.upp()
+        elif e.key() == Qt.Key_Down:
+            self.down()
+        self.showw()
+
     def upp(self):
         x = float(self.spn.text())
         if x < self.x - self.delta:
-            self.spnn = float(self.spn.text())*1.5
+            self.spnn = float(self.spn.text()) * 1.5
         self.spn.setText(str(self.spnn))
 
     def downn(self):
         x = float(self.spn.text())
         if x > self.delta:
-            self.spnn = float(self.spn.text())/1.5
+            self.spnn = float(self.spn.text()) / 1.5
         self.spn.setText(str(self.spnn))
 
     def showw(self):
@@ -49,7 +57,6 @@ class MyWidget(QMainWindow):
         self.pic.setPixmap(pixm.scaled(761, 541))
 
     def writefile(self):
-        file = None
         map_file = "map.png"
         try:
             with open(map_file, "wb") as file:
