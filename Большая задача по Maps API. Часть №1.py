@@ -21,25 +21,33 @@ class MyWidget(QMainWindow):
     def initUI(self):
         self.setStyleSheet("QWidget { background-color: #ffd9b3}")
         self.sh.clicked.connect(self.showw)
-        self.up.clicked.connect(self.upp)
-        self.down.clicked.connect(self.downn)
 
     def keyPressEvent(self, e):
-        if e.key() == Qt.Key_Up:
+        if e.key() == Qt.Key_PageUp:
             self.upp()
-        elif e.key() == Qt.Key_Down:
+        elif e.key() == Qt.Key_PageDown:
             self.downn()
+        elif e.key() == Qt.Key_Right:
+            self.right()
+        elif e.key() == Qt.Key_Left:
+            self.left()
         self.showw()
+
+    def right(self):
+        self.lat.setText(str(float(self.lat.text()) + 10))
+
+    def left(self):
+        self.lat.setText(str(float(self.lon.text()) - 10))
 
     def upp(self):
         x = float(self.spn.text())
-        if x <= self.x/1.5:
+        if x <= self.x / 1.5:
             self.spnn = float(x) * 1.5
         self.spn.setText(str(self.spnn))
 
     def downn(self):
         x = float(self.spn.text())
-        if x > self.delta*1.5:
+        if x > self.delta * 1.5:
             self.spnn = float(self.spn.text()) / 1.5
         self.spn.setText(str(self.spnn))
 

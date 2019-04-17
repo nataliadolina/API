@@ -114,32 +114,6 @@
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="up">
-    <property name="geometry">
-     <rect>
-      <x>650</x>
-      <y>10</y>
-      <width>101</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PgUp</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="down">
-    <property name="geometry">
-     <rect>
-      <x>784</x>
-      <y>10</y>
-      <width>81</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PgDown</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
