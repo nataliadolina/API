@@ -11,11 +11,11 @@ class MyWidget(QMainWindow):
         super().__init__()
         uic.loadUi('task1.ui', self)
         self.response = None
-        self.delta = 0
+        self.delta = 0.02
         self.latt = 0
         self.lonn = 0
         self.spnn = 1
-        self.x = 180
+        self.x = 125
         self.initUI()
 
     def initUI(self):
@@ -28,18 +28,18 @@ class MyWidget(QMainWindow):
         if e.key() == Qt.Key_Up:
             self.upp()
         elif e.key() == Qt.Key_Down:
-            self.down()
+            self.downn()
         self.showw()
 
     def upp(self):
         x = float(self.spn.text())
-        if x < self.x - self.delta:
-            self.spnn = float(self.spn.text()) * 1.5
+        if x <= self.x/1.5:
+            self.spnn = float(x) * 1.5
         self.spn.setText(str(self.spnn))
 
     def downn(self):
         x = float(self.spn.text())
-        if x > self.delta:
+        if x > self.delta*1.5:
             self.spnn = float(self.spn.text()) / 1.5
         self.spn.setText(str(self.spnn))
 
